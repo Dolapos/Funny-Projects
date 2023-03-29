@@ -14,8 +14,8 @@ while (pick != num):
     guess += 1
     if(pick > num):
         print(pick,'is too high!')
-        pick = int(input('What is your guess? [choose between 1 and 100] '))
+        pick = int(input('What is your guess? [choose between 1 and 1000] '))
     elif(pick < num):
         print(pick,'is too low!')
-        pick = int(input('What is your guess? [choose between 1 and 100] '))
+        pick = int(input('What is your guess? [choose between 1 and 1000] '))
 print(num,'is correct!','It took you ' + str(guess) + ' guesses') 
