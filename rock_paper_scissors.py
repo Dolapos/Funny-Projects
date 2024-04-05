@@ -1,4 +1,5 @@
 import random
+import time
 
 class RPS:
     def __init__(self, player = None, computer = None):
@@ -11,7 +12,9 @@ class RPS:
 
     def player_input(self):
         while True:
-            player_choice = input('Rock, Paper, Scissors!: ').lower()
+            print('Rock, Paper, Scissors...')
+            time.sleep(2)
+            player_choice = input('SHOOT!: ').lower()
             if player_choice in self.choices:
                 self.player = player_choice
                 break
@@ -25,6 +28,7 @@ class RPS:
         if (self.computer == 'rock' and self.player == 'scissors') or (self.computer == 'paper' and self.player == 'rock') or (self.computer == 'scissors' and self.player == 'paper'):
             return 'Computer is the winner!'
         elif self.computer == self.player:
+            time.sleep(2)
             return f'Draw!'
         else:
             return f'Player is the winner!'
