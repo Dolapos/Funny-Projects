@@ -13,18 +13,18 @@ class RPS:
 
     def __str__(self):
         print()
-        return f'Player: {self.player} | Computer: {self.computer}'
+        return f'Player: {self.player}\nComputer: {self.computer}'
 
     def player_input(self):
         while True:
             print('Welcome to Rock, Paper, Scissors!')
-            time.sleep(2)
+            time.sleep(1)
             print('This is a game of pure luck!')
-            time.sleep(2)
+            time.sleep(1)
             print('You will be playing against a computer. You play on \'SHOOT!\'')
-            time.sleep(2)
+            time.sleep(1)
             print('Rock, Paper, Scissors...')
-            time.sleep(2)
+            time.sleep(1)
             player_choice = input('SHOOT!: ').lower()
             if player_choice in self.choices:
                 self.player = player_choice
@@ -41,9 +41,10 @@ class RPS:
                 (self.computer == 'scissors' and self.player == 'paper')):
             self.computer_wins += 1
             self.total_games += 1
+            print()
             return 'Computer is the winner!'
         elif self.computer == self.player:
-            time.sleep(2)
+            self.total_games += 1
             return f'Draw!'
         else:
             self.player_wins += 1
@@ -61,11 +62,13 @@ class RPS:
                 self.comp_input()
                 result = self.play_game()
                 print(self.__str__())
+                print()
                 print(result)
             else:
                 print('Thanks for playing! \n')
                 print(f'Player Wins: {self.player_wins}')
                 print(f'Computer Wins: {self.computer_wins} \n')
+                print()
                 print(f'Total Games: {self.total_games}')
                 break
 
